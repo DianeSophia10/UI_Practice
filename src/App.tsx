@@ -19,7 +19,7 @@ export default function App() {
           <SlideTabsExample />
         </div>
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Navigate to="/lester" replace />} />
+          <Route path="/" element={<Navigate to="/diane" replace />} />
           <Route path="/lester" element={<Lester />} />
           <Route path="/diane" element={<Diane />} />
           <Route path="/alforque" element={<Alforque />} />

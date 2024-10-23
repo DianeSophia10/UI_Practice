@@ -1,0 +1,89 @@
+.rubiks-cube {
+    width: 80px; /* Reduced width */
+    height: 80px; /* Reduced height */
+    position: relative;
+    transform-style: preserve-3d; /* Enable 3D transformation */
+    transform: rotateX(20deg) rotateY(30deg); /* Initial rotation for better view */
+    animation: rotate 5s infinite linear; /* Rotation animation */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(20deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(20deg) rotateY(360deg);
+    }
+}
+
+.face {
+    position: absolute;
+    width: 80px; /* Reduced face width */
+    height: 80px; /* Reduced face height */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3x3 grid */
+    backface-visibility: hidden; /* Hide the back face */
+}
+
+/* Positioning each face */
+.front {
+    background: transparent;
+    transform: translateZ(40px); /* Move front face outwards */
+}
+
+.back {
+    background: transparent;
+    transform: rotateY(180deg) translateZ(40px); /* Position back face */
+}
+
+.left {
+    background: transparent;
+    transform: rotateY(-90deg) translateZ(40px); /* Position left face */
+}
+
+.right {
+    background: transparent;
+    transform: rotateY(90deg) translateZ(40px); /* Position right face */
+}
+
+.top {
+    background: transparent;
+    transform: rotateX(90deg) translateZ(40px); /* Position top face */
+}
+
+.bottom {
+    background: transparent;
+    transform: rotateX(-90deg) translateZ(40px); /* Position bottom face */
+}
+
+/* Cell styles */
+.cell {
+    width: 26.67px; /* Width of each cell */
+    height: 26.67px; /* Height of each cell */
+    box-sizing: border-box; /* Include padding and border in width and height */
+}
+
+/* Face colors */
+.red {
+    background-color: #ff0000; /* Red */
+}
+
+.green {
+    background-color: #00ff00; /* Green */
+}
+
+.blue {
+    background-color: #0000ff; /* Blue */
+}
+
+.orange {
+    background-color: #ff8c00; /* Orange */
+}
+
+.yellow {
+    background-color: #ffff00; /* Yellow */
+}
+
+.white {
+    background-color: #ffffff; /* White */
+}
